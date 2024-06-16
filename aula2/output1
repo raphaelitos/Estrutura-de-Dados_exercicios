@@ -1,0 +1,52 @@
+Digite o nome do seu SuperMercado: #####ADICAO DE FILIAIS#####
+Digite o nome da filial: Filial adicionada com sucesso!
+
+Deseja adicionar mais uma filial?
+	1-SIM
+	0-NAO
+Digite o nome da filial: Filial adicionada com sucesso!
+
+Deseja adicionar mais uma filial?
+	1-SIM
+	0-NAO
+Digite o nome da filial: Uma filial com esse nome ja existe! Digite novamente
+Filial adicionada com sucesso!
+
+Deseja adicionar mais uma filial?
+	1-SIM
+	0-NAO
+###########################
+#####ADICAO DE ITENS#####
+Digite o nome de uma filial cadastrada: Filial nao encontrada! Tente novamente
+Nome do produto: Valor do produto: Defina a quantidade desse item de estoque: Deseja adcionar mais um item a essa filial?
+1-SIM
+0-NAO
+Nome do produto: Valor do produto: Defina a quantidade desse item de estoque: Deseja adcionar mais um item a essa filial?
+1-SIM
+0-NAO
+#############################
+Deseja adicionar itens a outra filial?
+	1-SIM
+	0-NAO
+#####ADICAO DE ITENS#####
+Digite o nome de uma filial cadastrada: Nome do produto: Valor do produto: Defina a quantidade desse item de estoque: Deseja adcionar mais um item a essa filial?
+1-SIM
+0-NAO
+#############################
+Deseja adicionar itens a outra filial?
+	1-SIM
+	0-NAO
+#########################
+#####RELATORIO GERAL#####
+NOME: Supermercado Carone | ESTOQUE TOTAL: 11420
+
+	FILIAL: Jardim Camburi
+	ESTOQUE: 6830
+		Item: Detergente Limpol | VALOR: 1.99 | QTD: 1830
+		Item: Papel higienico Neve | VALOR: 8.50 | QTD: 5000
+	FILIAL: Jardim da Penha
+	ESTOQUE: 0
+	FILIAL: Sao Torquato
+	ESTOQUE: 4590
+		Item: Fita isolante Adelbras | VALOR: 13.20 | QTD: 4590
+#########################
