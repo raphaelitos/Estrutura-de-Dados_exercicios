@@ -46,7 +46,7 @@ static dataType pop1(tPilhaD *p){
         return d;
     }
     d = p->vet[p->topo1];
-    (p->topo1--);
+    (p->topo1)--;
     return d;
 }
 
@@ -57,7 +57,7 @@ static dataType pop2(tPilhaD *p){
         return d;
     }
     d = p->vet[p->topo2];
-    (p->topo2++);
+    (p->topo2)++;
     return d;
 }
 
