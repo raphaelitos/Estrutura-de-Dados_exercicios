@@ -2,37 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
-A ideia geral:
-
-1. **Escolha do Pivô**: Seleciona-se um elemento da lista como pivô. O pivô é usado para dividir a lista em duas partes.
-
-2. **Particionamento**: Reorganiza a lista de modo que todos os elementos menores que o pivô fiquem antes dele, e todos os elementos maiores fiquem depois dele. 
-Após esse processo, o pivô está em sua posição final na lista ordenada.
-
-3. **Recursão**: Aplica-se recursivamente o mesmo processo às sublistas de elementos menores e maiores que o pivô.
-
-4. **Combinação**: Não é necessário fazer nada na etapa de combinação no Quick Sort, pois a lista é ordenada "in place". Após todas as recursões,
-a lista estará ordenada.
-
-Esse processo é repetido até que todas as partições tenham tamanho zero ou um (sublistas vazias ou com um único elemento), o que significa que a lista 
-está ordenada por completo.
-
-Sim, na primeira iteração do algoritmo Quick Sort, é comum escolher o primeiro elemento da lista como pivô. Esta abordagem é simples e direta:
-
-1. **Escolha do Pivô**: Seleciona-se o primeiro elemento da lista como pivô.
-
-2. **Particionamento**: Reorganiza-se a lista de modo que todos os elementos menores que o pivô fiquem antes dele, e todos os elementos maiores fiquem depois dele. 
-Após essa etapa, o pivô estará em sua posição final na lista ordenada.
-
-3. **Recursão**: Aplica-se recursivamente o mesmo processo às sublistas de elementos menores e maiores que o pivô.
-
-4. **Combinação**: Como o Quick Sort ordena "in place", não é necessário nenhuma ação específica na etapa de combinação.
-
-A escolha do primeiro elemento como pivô na primeira iteração é eficiente em termos de implementação e é frequentemente utilizada em versões simples do algoritmo. 
-No entanto, é importante notar que essa escolha pode levar a um desempenho menos ideal em certos casos específicos de entrada, como listas já parcialmente ordenadas.
-*/
-
 void inicializaGeradorAleatorio() {
     srand(time(NULL));
 }
@@ -88,9 +57,9 @@ void BubbleSort(int vet[], int tam){
                 vet[j + 1] = vet[j];
                 vet[j] = aux;
                 swap = 1;
-            }//swap
+            }//troca
         }
-        if(!swap){//already sorted
+        if(!swap){
             break;
         }
     }
@@ -98,7 +67,7 @@ void BubbleSort(int vet[], int tam){
 
 int BinSch(int vet[], int tam, int x){
     int ini = 0;
-    int fim = 0;
+    int fim = tam - 1;;
     int meio;
 
     while(ini <= fim){
@@ -124,6 +93,7 @@ int LinearSch(int vet[], int tam, int x){
 }
 
 void PrintVet(int vet[], int tam){
+    printf("Imprimindo vetor de %d posicoes:\n", tam);
     printf("[ ");
     for(int i = 0; i < tam; i++){
         printf("%d ", vet[i]);
@@ -133,18 +103,45 @@ void PrintVet(int vet[], int tam){
 }
 
 void TestaOrdenacao(int vet[], int tam){
-    PrintVet(vet, tam);
-    printf("Testando Bubble Sort:");
+    printf("Testando Bubble Sort:\n");
+    clock_t inicio = clock();
     BubbleSort(vet, tam);
+    clock_t fim = clock();
+    double dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    printf("Tempo de ordenacao: %lf segundos\n", dif);
     PrintVet(vet, tam);
     
-    inicializaVetAleatorio(vet, tam, 15);
-    printf("Testando Quick Sort:");
+    inicializaVetAleatorio(vet, tam, tam);
+    printf("Testando Quick Sort:\n");
+    inicio = clock();
     QuickSort(vet, tam, 0);
+    fim = clock();
+    dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    printf("Tempo de ordenacao: %lf segundos\n", dif);
     PrintVet(vet, tam);
 }
 
-void TestaBusca(int vet[], int tam);
+void TestaBusca(int vet[], int tam, int x){
+    clock_t inicio = clock();
+    int id = BinSch(vet, tam, x);
+    clock_t fim = clock();
+    double dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    printf("Tempo de busca [binaria]: %lf segundos\n", dif);
+   
+    if(id != -1) printf("O id do elemento %d eh %d!\n", x, id);
+    
+    else printf("Elemento %d nao esta no vetor :(\n", x);
+
+    inicio = clock();
+    id = LinearSch(vet, tam, x);
+    fim = clock();
+    dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+    printf("Tempo de busca [linear]: %lf segundos\n", dif);
+
+    if(id != -1) printf("O id do elemento %d eh %d!\n", x, id);
+    
+    else printf("Elemento %d nao esta no vetor :(\n", x);
+}
 
 int main(){
     inicializaGeradorAleatorio();
@@ -160,6 +157,15 @@ int main(){
     inicializaVetAleatorio(vet, tamanho, tamanho);
 
     TestaOrdenacao(pequeno, 8);
+
+    TestaBusca(pequeno, 8, -1);
+    TestaBusca(pequeno, 8, 7);
+
+    TestaOrdenacao(vet, tamanho);
+
+    TestaBusca(vet, tamanho, -1);
+    TestaBusca(vet, tamanho, vet[rand() % tamanho]);
+
     /*
     double dif;
     
