@@ -45,8 +45,6 @@ void QuickSort(int* vet, int tam, int ini){
     QuickSort(vet, tam, menor + 1);
 }
 
-void NoRecQuickSort(int *vet, int tam);//tentar implementacao nao recursiva
-
 void BubbleSort(int vet[], int tam){
     int swap = 0, aux;
     for(int i = 0; i < tam - 1; i++){
@@ -81,7 +79,19 @@ int BinSch(int vet[], int tam, int x){
     return -1; //not found
 }
 
-void RecBinSch();//implementar recursão
+int RecBinSch(int *vet, int n, int x){
+    if(n <= 0) return -1;
+    int meio = n/2;
+
+    if(x < vet[meio]) return RecBinSch(vet, meio, x);
+
+    else if(x > vet[meio]){
+        int r = RecBinSch((vet + meio + 1), (n - meio -1), x);
+        if(r < 0) return -1;
+        return meio + r + 1;
+    }
+    else return meio;    
+}
 
 int LinearSch(int vet[], int tam, int x){
     for(int i = 0; i < tam; i++){
