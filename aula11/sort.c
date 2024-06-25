@@ -103,7 +103,6 @@ int LinearSch(int vet[], int tam, int x){
 }
 
 void PrintVet(int vet[], int tam){
-    printf("Imprimindo vetor de %d posicoes:\n", tam);
     printf("[ ");
     for(int i = 0; i < tam; i++){
         printf("%d ", vet[i]);
@@ -114,43 +113,67 @@ void PrintVet(int vet[], int tam){
 
 void TestaOrdenacao(int vet[], int tam){
     printf("Testando Bubble Sort:\n");
-    clock_t inicio = clock();
+    PrintVet(vet, tam);
     BubbleSort(vet, tam);
-    clock_t fim = clock();
-    double dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printf("Tempo de ordenacao: %lf segundos\n", dif);
     PrintVet(vet, tam);
     
     inicializaVetAleatorio(vet, tam, tam);
+    
     printf("Testando Quick Sort:\n");
+    PrintVet(vet, tam);
+    QuickSort(vet, tam, 0);
+    PrintVet(vet, tam);
+}
+
+void ExibeTempoOrdenacoes(int vet[], int tam){
+    printf("### Bubble Sort ###\n");
+    clock_t inicio = clock();
+    BubbleSort(vet, tam);
+    clock_t fim = clock();
+    long double dif = ((long double)fim - (long double)inicio) / CLOCKS_PER_SEC;
+    printf("Tempo de ordenacao (%d posicoes): %Lf segundos\n", tam, dif);
+    
+    inicializaVetAleatorio(vet, tam, tam);
+    
+    printf("### Quick Sort ###\n");
     inicio = clock();
     QuickSort(vet, tam, 0);
     fim = clock();
-    dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printf("Tempo de ordenacao: %lf segundos\n", dif);
-    PrintVet(vet, tam);
+    dif = ((long double)fim - (long double)inicio) / CLOCKS_PER_SEC;
+    printf("Tempo de ordenacao (%d posicoes): %Lf segundos\n\n", tam, dif);
 }
 
 void TestaBusca(int vet[], int tam, int x){
     clock_t inicio = clock();
     int id = BinSch(vet, tam, x);
     clock_t fim = clock();
-    double dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printf("Tempo de busca [binaria]: %lf segundos\n", dif);
-   
-    if(id != -1) printf("O id do elemento %d eh %d!\n", x, id);
+    long double dif = ((long double)fim - (long double)inicio) / CLOCKS_PER_SEC;
     
-    else printf("Elemento %d nao esta no vetor :(\n", x);
+    printf("Tempo de busca [binaria nao recursiva, %d posicoes]: %Lf segundos\n", tam, dif);
+    
+    if(id != -1) printf("O id do elemento %d eh %d!\n\n", x, id);
+    else printf("Elemento %d nao esta no vetor :(\n\n", x);
+
+
+    inicio = clock();
+    id = RecBinSch(vet, tam, x);
+    fim = clock();
+    dif = ((long double)fim - (long double)inicio) / CLOCKS_PER_SEC;
+
+    printf("Tempo de busca [binaria recursiva, %d posicoes]: %Lf segundos\n", tam, dif);
+
+    if(id != -1) printf("O id do elemento %d eh %d!\n\n", x, id);    
+    else printf("Elemento %d nao esta no vetor :(\n\n", x);
 
     inicio = clock();
     id = LinearSch(vet, tam, x);
     fim = clock();
-    dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    printf("Tempo de busca [linear]: %lf segundos\n", dif);
-
-    if(id != -1) printf("O id do elemento %d eh %d!\n", x, id);
+    dif = ((long double)fim - (long double)inicio) / CLOCKS_PER_SEC;
     
-    else printf("Elemento %d nao esta no vetor :(\n", x);
+    printf("Tempo de busca [linear, %d posicoes]: %Lf segundos\n", tam, dif);
+    
+    if(id != -1) printf("O id do elemento %d eh %d!\n\n", x, id);
+    else printf("Elemento %d nao esta no vetor :(\n\n", x);
 }
 
 int main(){
@@ -163,47 +186,20 @@ int main(){
         printf("falha na alocacao de vetor grande\n");
         exit(EXIT_FAILURE);
     }
-
     inicializaVetAleatorio(vet, tamanho, tamanho);
 
     TestaOrdenacao(pequeno, 8);
 
+    inicializaVetAleatorio(vet, 8, 8);
+    ExibeTempoOrdenacoes(pequeno, 8);
+
     TestaBusca(pequeno, 8, -1);
     TestaBusca(pequeno, 8, 7);
 
-    TestaOrdenacao(vet, tamanho);
+    ExibeTempoOrdenacoes(vet, tamanho);
 
     TestaBusca(vet, tamanho, -1);
     TestaBusca(vet, tamanho, vet[rand() % tamanho]);
-
-    /*
-    double dif;
-    
-    ini = time(NULL);
-    QuickSort(pequeno, 8, 0);
-    fim = time(NULL);
-    dif = (float)ini - (float) fim;
-    printf("Tempo de ordenacao [pequeno]: %f", dif);
-    
-    clock_t inicio = clock();
-    //QuickSort(vet, tamanho, 0);
-    clock_t fim = clock();
-
-    dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-
-    //printf("Tempo de ordenação [grande] com Quick: %f segundos\n", dif);
-    
-    inicio = clock();
-    BubbleSort(vet, tamanho);
-    fim = clock();
-
-    dif = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-    
-    printf("Tempo de ordenação [grande] com Bubble: %f segundos\n", dif);
-
-
-    //PrintVet(pequeno, 8);
-    //PrintVet(vet, tamanho);*/
 
     free(vet);
     
