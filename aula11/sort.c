@@ -18,20 +18,22 @@ void inicializaVetAleatorio(int* vetor, int tamanho, int maxValor) {
     }
 }
 
-void QuickSort(int* vet, int tam, int ini){
-    if(ini >= tam - 1){
+/*void QuickSort(int* vet, int tam){
+    if(tam <= 1){
         return;
     }
     
     int pivo = vet[tam - 1], aux;
-    int menor = ini;  
+    int menor = -1;  
 
-    for(int i = ini; i < tam - 1; i++){
+    for(int i = 0; i < tam - 1; i++){
         if(vet[i] < pivo){
-            aux = vet[i];
-            vet[i] = vet[menor];
-            vet[menor] = aux;
             menor++;
+            if(i > menor){
+                aux = vet[i];
+                vet[i] = vet[menor];
+                vet[menor] = aux;
+            }
         }
     }
 
@@ -43,6 +45,35 @@ void QuickSort(int* vet, int tam, int ini){
     QuickSort(vet, menor, ini);
     // subvetor da direita
     QuickSort(vet, tam, menor + 1);
+}*/
+
+void QuickSort(int* vet, int ini, int tam){
+    if(ini >= tam){
+        return;
+    }
+    
+    int pivo = vet[tam - 1], aux;
+    int menor = ini;  
+
+    for(int i = ini; i < (tam - 1); i++){
+        if(vet[i] < pivo){
+            if(i != menor){
+                aux = vet[i];
+                vet[i] = vet[menor];
+                vet[menor] = aux;
+            }
+            menor++;
+        }
+    }
+
+    aux = vet[menor];
+    vet[menor] = vet[tam - 1];
+    vet[tam - 1] = aux;
+
+    // subvetor da esquerda
+    QuickSort(vet, ini, menor - 1);
+    // subvetor da direita
+    QuickSort(vet, menor + 1, tam);
 }
 
 void BubbleSort(int vet[], int tam){
@@ -121,7 +152,7 @@ void TestaOrdenacao(int vet[], int tam){
     
     printf("Testando Quick Sort:\n");
     PrintVet(vet, tam);
-    QuickSort(vet, tam, 0);
+    QuickSort(vet, 0, tam);
     PrintVet(vet, tam);
 }
 
@@ -181,16 +212,16 @@ int main(){
 
     int tamanho = 10000;
     int *vet = (int *)malloc(tamanho * sizeof(int));
-    int pequeno[8] = {0, 3, 5, 3, 2, 7, 8, 9};
     if(!vet){
         printf("falha na alocacao de vetor grande\n");
         exit(EXIT_FAILURE);
     }
     inicializaVetAleatorio(vet, tamanho, tamanho);
 
+    int pequeno[8] = {0, 3, 5, 3, 2, 7, 8, 9};
     TestaOrdenacao(pequeno, 8);
 
-    inicializaVetAleatorio(vet, 8, 8);
+    inicializaVetAleatorio(pequeno, 8, 8);
     ExibeTempoOrdenacoes(pequeno, 8);
 
     TestaBusca(pequeno, 8, -1);
