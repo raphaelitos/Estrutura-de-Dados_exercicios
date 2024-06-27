@@ -6,5 +6,18 @@ busca, impressão, inserção, retirada e liberação. Você escolhe o critério
 
 typedef struct abb tAbb;
 
+#include "aluno.h"
+
+tAbb *criaABB();
+
+tAluno *busca(tAbb *abb, int matricula);
+
+void imprime(tAbb *abb);
+
+void insere(tAbb *abb, tAluno *a);
+
+tAluno *retira(tAbb *abb , int matricula);
+
+void liberaArvore(tAbb *abb);
 
 #endif
