@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include "abb.h"
 
+struct abb{
+    
+};
 
 tAbb *criaABB();
 
