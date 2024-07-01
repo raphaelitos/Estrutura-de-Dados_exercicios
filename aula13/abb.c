@@ -36,14 +36,13 @@ void imprime(tAbb *abb){
 }
 
 tAbb* insere(tAbb *abb, tAluno *a){
-    if(!a) return;
+    if(!a) return NULL;
     if(!abb){
         abb = (tAbb*)malloc(sizeof(tAbb));
         abb->info = a;
         abb->sad = abb->sae = NULL;
-        return;
     }
-    if(getMatriculaAluno(a) < getMatriculaAluno(abb->info)){
+    else if(getMatriculaAluno(a) < getMatriculaAluno(abb->info)){
         abb->sae = insere(abb->sae, a);
     }
     else{
@@ -52,7 +51,7 @@ tAbb* insere(tAbb *abb, tAluno *a){
     return abb;
 }
 
-tAbb*retira(tAbb *abb , int matricula){
+tAbb* retira(tAbb *abb , int matricula){
     if(!abb) return NULL;
     if(matricula > getMatriculaAluno(abb->info)){
         abb->sad = retira(abb->sad, matricula);
@@ -67,12 +66,12 @@ tAbb*retira(tAbb *abb , int matricula){
         }
         else if(!abb->sad){//filho so na esquerda
             tAbb *temp =  abb;
-            abb = abb->sad;
+            abb = abb->sae;
             free(temp);
         }
         else if(!abb->sae){//filho so na direita
             tAbb *temp =  abb;
-            abb = abb->sae;
+            abb = abb->sad;
             free(temp);
         }
         else{ // dois filho :P

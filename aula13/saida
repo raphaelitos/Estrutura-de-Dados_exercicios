@@ -1,0 +1,29 @@
+Árvore em ordem crescente:
+Nome: Ana
+Matricula: 101
+
+Nome: João
+Matricula: 123
+
+Nome: Maria
+Matricula: 456
+
+Nome: Pedro
+Matricula: 789
+
+
+Aluno encontrado:
+Nome: João
+Matricula: 123
+
+
+Árvore após a remoção do aluno com matrícula 456:
+Nome: Ana
+Matricula: 101
+
+Nome: João
+Matricula: 123
+
+Nome: Pedro
+Matricula: 789
+

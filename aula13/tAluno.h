@@ -9,7 +9,7 @@ void desalocaAluno(tAluno *a);
 
 char *getNomeAluno(tAluno *a);
 
-char *getMatriculaAluno(tAluno *a);
+int getMatriculaAluno(tAluno *a);
 
 void imprimeAluno(tAluno *a);
 

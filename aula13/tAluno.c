@@ -26,13 +26,13 @@ char *getNomeAluno(tAluno *a){
     if(a) return a->nome;
 }
 
-char *getMatriculaAluno(tAluno *a){
+int getMatriculaAluno(tAluno *a){
     if(a) return a->matricula;
 }
 
 void imprimeAluno(tAluno *a){
     if(!a) return; 
-    printf("Nome: %s", a->nome);
-    printf("Matricula: %s", a->matricula);
+    printf("Nome: %s\n", a->nome);
+    printf("Matricula: %d\n\n", a->matricula);
 
 }
