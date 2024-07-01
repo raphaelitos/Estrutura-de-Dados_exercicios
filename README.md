@@ -32,7 +32,7 @@ Recomendamos o uso do MinGW, que pode ser baixado e instalado seguindo as instru
 
 1. **Clone o Repositório**: Clone este repositório para o seu ambiente local usando o comando:
     ```bash
-    [git clone https://github.com/usuario/estrutura-de-dados-ufes.git](https://github.com/raphaelitos/Estrutura-de-Dados_exercicios.git)
+    git clone https://github.com/usuario/estrutura-de-dados-ufes.git
     ```
 
 2. **Navegue pelos Diretórios**: Cada diretório contém um conjunto específico de exercícios e (geralmente) um enunciado.
