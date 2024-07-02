@@ -12,66 +12,41 @@ void inicializaGeradorAleatorio() {
 /// @param tamanho o tamanho do vetor
 /// @param maxValor maior valor possivel
 void inicializaVetAleatorio(int* vetor, int tamanho, int maxValor) {
-    // Preenche o vetor com valores aleatórios
     for (int i = 0; i < tamanho; i++) {
         vetor[i] = rand() % maxValor; // Gera um número entre 0 e maxValor-1
     }
 }
 
-/*void QuickSort(int* vet, int tam){
-    if(tam <= 1){
-        return;
-    }
-    
-    int pivo = vet[tam - 1], aux;
-    int menor = -1;  
-
-    for(int i = 0; i < tam - 1; i++){
-        if(vet[i] < pivo){
-            menor++;
-            if(i > menor){
-                aux = vet[i];
-                vet[i] = vet[menor];
-                vet[menor] = aux;
-            }
-        }
-    }
-
-    aux = vet[menor];
-    vet[menor] = vet[tam - 1];
-    vet[tam - 1] = aux;
-
-    // subvetor da esquerda
-    QuickSort(vet, menor, ini);
-    // subvetor da direita
-    QuickSort(vet, tam, menor + 1);
-}*/
-
+/// @brief aplica ordenacao rapida aos valores
+/// de um vetor de inteiros
+/// @param vet um vetor de inteiros valido
+/// @param ini o indice inicial do vetor
+/// @param tam o tamanho do vetor
 void QuickSort(int* vet, int ini, int tam){
-    if(ini >= tam){
+    if(ini >= tam - 1){
         return;
     }
     
-    int pivo = vet[tam - 1], aux;
-    int menor = ini;  
+    int pivo = vet[tam - 1], aux = 0;
+    int menor = ini - 1;  
 
     for(int i = ini; i < (tam - 1); i++){
-        if(vet[i] < pivo){
-            if(i != menor){
+        if(vet[i] <= pivo){
+            menor++;
+            if(i > menor){ //se for igual, o menor ja esta no lugar certo
                 aux = vet[i];
                 vet[i] = vet[menor];
                 vet[menor] = aux;
             }
-            menor++;
         }
     }
-
+    menor++;
     aux = vet[menor];
     vet[menor] = vet[tam - 1];
     vet[tam - 1] = aux;
 
     // subvetor da esquerda
-    QuickSort(vet, ini, menor - 1);
+    QuickSort(vet, ini, menor);
     // subvetor da direita
     QuickSort(vet, menor + 1, tam);
 }
@@ -168,7 +143,7 @@ void ExibeTempoOrdenacoes(int vet[], int tam){
     
     printf("### Quick Sort ###\n");
     inicio = clock();
-    QuickSort(vet, tam, 0);
+    QuickSort(vet, 0, tam);
     fim = clock();
     dif = ((long double)fim - (long double)inicio) / CLOCKS_PER_SEC;
     printf("Tempo de ordenacao (%d posicoes): %Lf segundos\n\n", tam, dif);
@@ -207,6 +182,15 @@ void TestaBusca(int vet[], int tam, int x){
     else printf("Elemento %d nao esta no vetor :(\n\n", x);
 }
 
+void teste(int *vet, int tam){
+    for(int i = 0; i < tam - 1; i++){
+        if(vet[i] > vet[i + 1]){
+            printf("erro de ordenacao em %d\n", i);
+            exit(EXIT_FAILURE);
+        }
+    }
+}
+
 int main(){
     inicializaGeradorAleatorio();
 
@@ -228,6 +212,8 @@ int main(){
     TestaBusca(pequeno, 8, 7);
 
     ExibeTempoOrdenacoes(vet, tamanho);
+
+    teste(vet, tamanho);
 
     TestaBusca(vet, tamanho, -1);
     TestaBusca(vet, tamanho, vet[rand() % tamanho]);
