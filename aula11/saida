@@ -4,9 +4,9 @@ Testando Bubble Sort:
 [ 0 2 3 3 5 7 8 9 ]
 
 Testando Quick Sort:
-[ 5 0 1 3 2 4 7 1 ]
+[ 0 7 3 4 6 1 3 7 ]
 
-[ 1 0 1 5 3 2 7 4 ]
+[ 0 1 3 3 4 6 7 7 ]
 
 ### Bubble Sort ###
 Tempo de ordenacao (8 posicoes): 0.000003 segundos
@@ -19,38 +19,38 @@ Elemento -1 nao esta no vetor :(
 Tempo de busca [binaria recursiva, 8 posicoes]: 0.000001 segundos
 Elemento -1 nao esta no vetor :(
 
-Tempo de busca [linear, 8 posicoes]: 0.000002 segundos
+Tempo de busca [linear, 8 posicoes]: 0.000001 segundos
 Elemento -1 nao esta no vetor :(
 
 Tempo de busca [binaria nao recursiva, 8 posicoes]: 0.000001 segundos
 Elemento 7 nao esta no vetor :(
 
-Tempo de busca [binaria recursiva, 8 posicoes]: 0.000002 segundos
+Tempo de busca [binaria recursiva, 8 posicoes]: 0.000001 segundos
 Elemento 7 nao esta no vetor :(
 
 Tempo de busca [linear, 8 posicoes]: 0.000001 segundos
 Elemento 7 nao esta no vetor :(
 
 ### Bubble Sort ###
-Tempo de ordenacao (10000 posicoes): 0.256920 segundos
+Tempo de ordenacao (10000 posicoes): 0.224979 segundos
 ### Quick Sort ###
-Tempo de ordenacao (10000 posicoes): 0.082982 segundos
+Tempo de ordenacao (10000 posicoes): 0.000982 segundos
 
 Tempo de busca [binaria nao recursiva, 10000 posicoes]: 0.000000 segundos
 Elemento -1 nao esta no vetor :(
-
-Tempo de busca [binaria recursiva, 10000 posicoes]: 0.000001 segundos
-Elemento -1 nao esta no vetor :(
-
-Tempo de busca [linear, 10000 posicoes]: 0.000023 segundos
-Elemento -1 nao esta no vetor :(
-
-Tempo de busca [binaria nao recursiva, 10000 posicoes]: 0.000000 segundos
-Elemento 4977 nao esta no vetor :(
 
 Tempo de busca [binaria recursiva, 10000 posicoes]: 0.000000 segundos
-Elemento 4977 nao esta no vetor :(
+Elemento -1 nao esta no vetor :(
 
-Tempo de busca [linear, 10000 posicoes]: 0.000015 segundos
-O id do elemento 4977 eh 7009!
+Tempo de busca [linear, 10000 posicoes]: 0.000021 segundos
+Elemento -1 nao esta no vetor :(
+
+Tempo de busca [binaria nao recursiva, 10000 posicoes]: 0.000000 segundos
+O id do elemento 4600 eh 4600!
+
+Tempo de busca [binaria recursiva, 10000 posicoes]: 0.000000 segundos
+O id do elemento 4600 eh 4599!
+
+Tempo de busca [linear, 10000 posicoes]: 0.000010 segundos
+O id do elemento 4600 eh 4599!
 
