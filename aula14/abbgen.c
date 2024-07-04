@@ -53,7 +53,7 @@ tAbbg *retiraAbb(tAbbg *abb , void *chave, int (*comparaChave)(void*, void*)){
     if(comparaChave(chave, abb->info) < 0){
         abb->sae = retiraAbb(abb->sae, chave, comparaChave);
     }
-    if(comparaChave(chave, abb->info) > 0){
+    else if(comparaChave(chave, abb->info) > 0){
         abb->sad = retiraAbb(abb->sad, chave, comparaChave);
     }
     else{
