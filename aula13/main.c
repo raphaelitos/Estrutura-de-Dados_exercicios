@@ -15,12 +15,17 @@ int main() {
     tAluno *aluno2 = criaAluno("Maria", 456);
     tAluno *aluno3 = criaAluno("Pedro", 789);
     tAluno *aluno4 = criaAluno("Ana", 101);
+    tAluno *aluno5 = criaAluno("Jao", 125);
+    tAluno *aluno6 = criaAluno("Clodovil", 119);
+
 
     // Inserção dos alunos na árvore
     arvore = insere(arvore, aluno1);
     arvore = insere(arvore, aluno2);
     arvore = insere(arvore, aluno3);
     arvore = insere(arvore, aluno4);
+    arvore = insere(arvore, aluno5);
+    arvore = insere(arvore, aluno6);
 
     // Impressão da árvore em ordem crescente
     printf("Árvore em ordem crescente:\n");
@@ -38,7 +43,7 @@ int main() {
     }
 
     // Remoção de um aluno da árvore
-    int matriculaParaRemover = 456;
+    int matriculaParaRemover = 123;
     arvore = retira(arvore, matriculaParaRemover);
     
     // Impressão da árvore após a remoção

@@ -78,12 +78,15 @@ tAbbg *retiraAbb(tAbbg *abb , void *chave, int (*comparaChave)(void*, void*)){
                 //o antecessor eh o no mais a direita
                 //da subarvore da esquerda
             }
+            //troca informacoes
             void *aux = abb->info;
             abb->info = temp->info;
             temp->info = aux;
-            abb->sae = retira(abb->sad, chave);
+            
+            abb->sae = retiraAbb(abb->sae, chave, comparaChave);
         }
     }
+    return abb;
 }
 
 void desalocaaAbb(tAbbg *abb){

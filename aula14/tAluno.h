@@ -13,8 +13,12 @@ int getMatriculaAluno(tAluno *a);
 
 void imprimeAluno(void *dado);
 
-int comparaMatricula(void *a, void *b);
+int comparaMatricula(void *chave, void *aluno);
 
-int comparaNome(void *a, void *b);
+int comparaNome(void *chave, void *aluno);
+
+int comparaAlunoMatricula(void *a, void *b);
+
+int comparaAlunoNome(void *a, void *b);
 
 #endif

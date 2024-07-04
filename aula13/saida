@@ -2,8 +2,14 @@
 Nome: Ana
 Matricula: 101
 
+Nome: Clodovil
+Matricula: 119
+
 Nome: João
 Matricula: 123
+
+Nome: Jao
+Matricula: 125
 
 Nome: Maria
 Matricula: 456
@@ -17,12 +23,18 @@ Nome: João
 Matricula: 123
 
 
-Árvore após a remoção do aluno com matrícula 456:
+Árvore após a remoção do aluno com matrícula 123:
 Nome: Ana
 Matricula: 101
 
-Nome: João
-Matricula: 123
+Nome: Clodovil
+Matricula: 119
+
+Nome: Jao
+Matricula: 125
+
+Nome: Maria
+Matricula: 456
 
 Nome: Pedro
 Matricula: 789

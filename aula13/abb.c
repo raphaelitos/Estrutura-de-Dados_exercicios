@@ -67,16 +67,17 @@ tAbb* retira(tAbb *abb , int matricula){
         else if(!abb->sad){//filho so na esquerda
             tAbb *temp =  abb;
             abb = abb->sae;
-            free(temp);
+            liberaArvore(temp);
         }
         else if(!abb->sae){//filho so na direita
             tAbb *temp =  abb;
             abb = abb->sad;
-            free(temp);
+            liberaArvore(temp);
+
         }
         else{ // dois filho :P
             tAbb *temp = abb->sae;
-            while(temp != NULL){
+            while(temp->sad != NULL){
                 temp = temp->sad;
                 //o antecessor eh o no mais a direita
                 //da subarvore da esquerda
@@ -84,7 +85,7 @@ tAbb* retira(tAbb *abb , int matricula){
             tAluno *aux = abb->info;
             abb->info = temp->info;
             temp->info = aux;
-            abb->sae = retira(abb->sad, matricula);
+            abb->sae = retira(abb->sae, matricula);
         }
     }
     return abb;

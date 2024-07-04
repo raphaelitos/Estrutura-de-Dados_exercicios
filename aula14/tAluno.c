@@ -38,6 +38,26 @@ void imprimeAluno(void *dado){
 
 }
 
-int comparaMatricula(void *a, void *b);
+int comparaMatricula(void *chave, void *aluno){
+    int *matricula = (int*)chave;
+    tAluno *a = (tAluno*)aluno;
+    return ((*matricula) - a->matricula);
+}
 
-int comparaNome(void *a, void *b);
+int comparaNome(void *chave, void *aluno){
+    char *nome = (char*)chave;
+    tAluno *a = (tAluno*)aluno;
+    return strcmp(nome, a->nome);
+}
+
+int comparaAlunoMatricula(void *a, void *b){
+    tAluno *a1 = (tAluno*)a;
+    tAluno *a2 = (tAluno*)b;
+    return a1->matricula - a2->matricula;
+}
+
+int comparaAlunoNome(void *a, void *b){
+    tAluno *a1 = (tAluno*)a;
+    tAluno *a2 = (tAluno*)b;
+    return strcmp(a1->nome, a2->nome);
+}
