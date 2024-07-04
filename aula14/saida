@@ -1,0 +1,91 @@
+Árvore em ordem crescente [matricula]:
+Nome: Ana
+Matricula: 101
+
+Nome: João
+Matricula: 123
+
+Nome: Sara
+Matricula: 142
+
+Nome: Maria
+Matricula: 456
+
+Nome: Milena
+Matricula: 777
+
+Nome: Pedro
+Matricula: 789
+
+Nome: Iarlen
+Matricula: 897
+
+Árvore em ordem crescente [nome]:
+Nome: Ana
+Matricula: 101
+
+Nome: Iarlen
+Matricula: 897
+
+Nome: João
+Matricula: 123
+
+Nome: Maria
+Matricula: 456
+
+Nome: Milena
+Matricula: 777
+
+Nome: Pedro
+Matricula: 789
+
+Nome: Sara
+Matricula: 142
+
+
+Aluno encontrado:
+Nome: Maria
+Matricula: 456
+
+
+Aluno encontrado:
+Nome: Sara
+Matricula: 142
+
+
+Árvore após a remoção do aluno com matrícula 456:
+Nome: Ana
+Matricula: 101
+
+Nome: João
+Matricula: 123
+
+Nome: Sara
+Matricula: 142
+
+Nome: Milena
+Matricula: 777
+
+Nome: Pedro
+Matricula: 789
+
+Nome: Iarlen
+Matricula: 897
+
+
+Árvore após a remoção do aluno com nome Milena:
+Nome: Ana
+Matricula: 101
+
+Nome: Iarlen
+Matricula: 897
+
+Nome: João
+Matricula: 123
+
+Nome: Maria
+Matricula: 456
+
+Nome: Sara
+Matricula: 142
+

@@ -61,18 +61,18 @@ tAbb* retira(tAbb *abb , int matricula){
     }
     else{
         if(!abb->sae && !abb->sad){//nenhum filho
-            liberaArvore(abb);
+            free(abb);
             abb = NULL;
         }
         else if(!abb->sad){//filho so na esquerda
             tAbb *temp =  abb;
             abb = abb->sae;
-            liberaArvore(temp);
+            free(temp);
         }
         else if(!abb->sae){//filho so na direita
             tAbb *temp =  abb;
             abb = abb->sad;
-            liberaArvore(temp);
+            free(temp);
 
         }
         else{ // dois filho :P

@@ -58,22 +58,22 @@ tAbbg *retiraAbb(tAbbg *abb , void *chave, int (*comparaChave)(void*, void*)){
     }
     else{
         if(!abb->sae && !abb->sad){//nenhum filho
-            desalocaaAbb(abb);
+            free(abb);
             abb = NULL;
         }
         else if(!abb->sad){//filho so na esquerda
-            tAbbg *temp =  abb;
+            tAbbg *temp = abb;
             abb = abb->sae;
             free(temp);
         }
         else if(!abb->sae){//filho so na direita
-            tAbbg *temp =  abb;
+            tAbbg *temp = abb;
             abb = abb->sad;
             free(temp);
         }
         else{ // dois filho :P
             tAbbg *temp = abb->sae;
-            while(temp != NULL){
+            while(temp->sad != NULL){
                 temp = temp->sad;
                 //o antecessor eh o no mais a direita
                 //da subarvore da esquerda
@@ -82,7 +82,6 @@ tAbbg *retiraAbb(tAbbg *abb , void *chave, int (*comparaChave)(void*, void*)){
             void *aux = abb->info;
             abb->info = temp->info;
             temp->info = aux;
-            
             abb->sae = retiraAbb(abb->sae, chave, comparaChave);
         }
     }
