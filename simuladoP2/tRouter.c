@@ -23,4 +23,5 @@ void printRouter(tRouter *r){
     if(!r) return;
     printf("\n### IMPRESSAO DE ROUTER ###\n");
     printf("ID: %d\n", r->id);
+    printTabela(r->table);
 }

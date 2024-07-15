@@ -11,9 +11,9 @@ tTabela *criaTabela(){
     tTabela *t = (tTabela*)calloc(1, sizeof(tTabela));
     if(!t)exit(EXIT_FAILURE);
     t->enderecos = (tEndereco**)calloc(TAM_MAX, sizeof(tEndereco*));
-    /*for(int i = 0; i < TAM_MAX; i++){
-        t->enderecos[i] = criaEndereco(0, 0);
-    }*/
+    for(int i = 0; i < TAM_MAX; i++){
+        t->enderecos[i] = NULL;
+    }
     return t;
 }
 
@@ -32,6 +32,43 @@ void desalocaTabela(tTabela *t){
     free(t);
 }
 
-int acessaTabela(tTabela *t, int chave);
+tEndereco* acessaTabela(tTabela *t, int chave){
+    tEndereco *aux = NULL;
+    if(!t) return aux;
 
-void printTabela(tTabela *t);
+    int id = funcHash(chave);
+    if(t->enderecos[id]);
+    for(aux = t->enderecos[id]; aux != NULL; aux = getProxEndereco(aux)){
+        if(chave == getDestination(aux)) return aux;
+    }
+
+    printf("O endereco com essa chave nao foi encontrado.\n");
+    printf("deseja inserir um novo endereco com esse destination?\n[1 - sim | 0 - nao]\n");
+    int op = 0;
+    scanf("%d", &op);
+    if(!op) return aux;
+
+    int nh;
+    printf("Insira o valor do NextHop para o novo endereco\n");
+    scanf("%d", &nh);
+    aux = criaEndereco(chave, nh);
+    return aux;
+}
+
+void printTabela(tTabela *t){
+    if(!t) return;
+    for(int i = 0; i < TAM_MAX; i++){
+        printf("tab[%d]\n", i);
+        if(t->enderecos[i]) printEndereco(t->enderecos[i]);
+    }
+}
+
+void insereTabela(tTabela *t, tEndereco *e){
+    if(!e || !t) exit(EXIT_FAILURE);
+    
+    int id = funcHash(getDestination(e));
+    if(t->enderecos[id]){
+        setProxEndereco(e, t->enderecos[id]);
+    }
+    t->enderecos[id] = e;
+}

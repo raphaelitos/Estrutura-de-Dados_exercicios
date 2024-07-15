@@ -11,4 +11,10 @@ void setProxEndereco(tEndereco *e, tEndereco *prox);
 
 void printEndereco(tEndereco *e);
 
+int getDestination(tEndereco *e);
+
+int getNextHop(tEndereco *e);
+
+tEndereco* getProxEndereco(tEndereco *e);
+
 #endif

@@ -25,6 +25,28 @@ void desalocaEndereco(tEndereco *e){
     free(e);
 }
 
-void setProxEndereco(tEndereco *e, tEndereco *prox);
+void setProxEndereco(tEndereco *e, tEndereco *prox){
+    if(!e) return;
+    e->prox = prox;
+}
 
-void printEndereco(tEndereco *e);
+void printEndereco(tEndereco *e){
+    if(!e) return;
+    printf("\n### IMPRESSAO DE ENDERECO ###\n");
+    if(!e->prox){
+        printf("PROXIMO:\n");
+        printEndereco(e->prox);
+    }
+}
+
+int getDestination(tEndereco *e){
+    return e->destination;
+}
+
+int getNextHop(tEndereco *e){
+    return e->nextHop;
+}
+
+tEndereco* getProxEndereco(tEndereco *e){
+    return e->prox;
+}
