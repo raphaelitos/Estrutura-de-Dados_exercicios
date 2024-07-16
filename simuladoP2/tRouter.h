@@ -9,6 +9,6 @@ tRouter *criaRouter(int id);
 
 void desalocaRouter(tRouter *r);
 
-void setProxRouter(tRouter *r, tRouter *prox);
+void printRouter(tRouter *r);
 
 #endif

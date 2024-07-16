@@ -33,7 +33,8 @@ void setProxEndereco(tEndereco *e, tEndereco *prox){
 void printEndereco(tEndereco *e){
     if(!e) return;
     printf("\n### IMPRESSAO DE ENDERECO ###\n");
-    if(!e->prox){
+    printf("Destination - %d |NextHop - %d\n\n",e->destination, e->nextHop);
+    if(e->prox){
         printf("PROXIMO:\n");
         printEndereco(e->prox);
     }

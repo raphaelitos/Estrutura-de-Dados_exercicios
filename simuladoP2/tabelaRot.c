@@ -52,6 +52,7 @@ tEndereco* acessaTabela(tTabela *t, int chave){
     printf("Insira o valor do NextHop para o novo endereco\n");
     scanf("%d", &nh);
     aux = criaEndereco(chave, nh);
+    insereTabela(t, aux);
     return aux;
 }
 

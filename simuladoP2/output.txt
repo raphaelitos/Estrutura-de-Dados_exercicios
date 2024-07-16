@@ -1,0 +1,708 @@
+Tabela de endereços inicial:
+tab[0]
+tab[1]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 382 |NextHop - 93
+
+tab[2]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 891 |NextHop - 21
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 2 |NextHop - 66
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 256 |NextHop - 51
+
+tab[3]
+tab[4]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 258 |NextHop - 54
+
+tab[5]
+tab[6]
+tab[7]
+tab[8]
+tab[9]
+tab[10]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 137 |NextHop - 36
+
+tab[11]
+tab[12]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 647 |NextHop - 29
+
+tab[13]
+tab[14]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 776 |NextHop - 53
+
+tab[15]
+tab[16]
+tab[17]
+tab[18]
+tab[19]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 908 |NextHop - 48
+
+tab[20]
+tab[21]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 910 |NextHop - 89
+
+tab[22]
+tab[23]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 785 |NextHop - 32
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 277 |NextHop - 98
+
+tab[24]
+tab[25]
+tab[26]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 534 |NextHop - 46
+
+tab[27]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 154 |NextHop - 40
+
+tab[28]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 282 |NextHop - 39
+
+tab[29]
+tab[30]
+tab[31]
+tab[32]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 921 |NextHop - 5
+
+tab[33]
+tab[34]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 34 |NextHop - 98
+
+tab[35]
+tab[36]
+tab[37]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 164 |NextHop - 67
+
+tab[38]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 546 |NextHop - 48
+
+tab[39]
+tab[40]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 929 |NextHop - 32
+
+tab[41]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 803 |NextHop - 98
+
+tab[42]
+tab[43]
+tab[44]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 679 |NextHop - 28
+
+tab[45]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 45 |NextHop - 3
+
+tab[46]
+tab[47]
+tab[48]
+tab[49]
+tab[50]
+tab[51]
+tab[52]
+tab[53]
+tab[54]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 308 |NextHop - 71
+
+tab[55]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 563 |NextHop - 56
+
+tab[56]
+tab[57]
+tab[58]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 947 |NextHop - 38
+
+tab[59]
+tab[60]
+tab[61]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 823 |NextHop - 25
+
+tab[62]
+tab[63]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 190 |NextHop - 34
+
+tab[64]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 191 |NextHop - 25
+
+tab[65]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 954 |NextHop - 57
+
+tab[66]
+tab[67]
+tab[68]
+tab[69]
+tab[70]
+tab[71]
+tab[72]
+tab[73]
+tab[74]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 455 |NextHop - 63
+
+tab[75]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 75 |NextHop - 84
+
+tab[76]
+tab[77]
+tab[78]
+tab[79]
+tab[80]
+tab[81]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 716 |NextHop - 32
+
+tab[82]
+tab[83]
+tab[84]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 846 |NextHop - 11
+
+tab[85]
+tab[86]
+tab[87]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 214 |NextHop - 72
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 722 |NextHop - 21
+
+tab[88]
+tab[89]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 851 |NextHop - 36
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 978 |NextHop - 78
+
+tab[90]
+tab[91]
+tab[92]
+tab[93]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 855 |NextHop - 56
+
+tab[94]
+tab[95]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 730 |NextHop - 42
+
+tab[96]
+tab[97]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 986 |NextHop - 12
+
+tab[98]
+tab[99]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 99 |NextHop - 17
+
+tab[100]
+tab[101]
+tab[102]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 229 |NextHop - 77
+
+tab[103]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 865 |NextHop - 85
+
+tab[104]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 104 |NextHop - 12
+
+tab[105]
+tab[106]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 487 |NextHop - 75
+
+tab[107]
+tab[108]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 616 |NextHop - 33
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 108 |NextHop - 52
+
+tab[109]
+tab[110]
+tab[111]
+tab[112]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 747 |NextHop - 54
+
+tab[113]
+tab[114]
+tab[115]
+tab[116]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 878 |NextHop - 34
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 878 |NextHop - 49
+
+tab[117]
+tab[118]
+tab[119]
+tab[120]
+tab[121]
+tab[122]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 757 |NextHop - 92
+
+tab[123]
+tab[124]
+tab[125]
+tab[126]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 507 |NextHop - 33
+
+Endereço encontrado: Destination 986, NextHop 12
+O endereco com essa chave nao foi encontrado.
+deseja inserir um novo endereco com esse destination?
+[1 - sim | 0 - nao]
+O endereco com essa chave nao foi encontrado.
+deseja inserir um novo endereco com esse destination?
+[1 - sim | 0 - nao]
+O endereco com essa chave nao foi encontrado.
+deseja inserir um novo endereco com esse destination?
+[1 - sim | 0 - nao]
+O endereco com essa chave nao foi encontrado.
+deseja inserir um novo endereco com esse destination?
+[1 - sim | 0 - nao]
+Endereço encontrado: Destination 757, NextHop 92
+Tabela de endereços após acessos e inserções:
+tab[0]
+tab[1]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 382 |NextHop - 93
+
+tab[2]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 891 |NextHop - 21
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 2 |NextHop - 66
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 256 |NextHop - 51
+
+tab[3]
+tab[4]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 258 |NextHop - 54
+
+tab[5]
+tab[6]
+tab[7]
+tab[8]
+tab[9]
+tab[10]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 137 |NextHop - 36
+
+tab[11]
+tab[12]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 647 |NextHop - 29
+
+tab[13]
+tab[14]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 776 |NextHop - 53
+
+tab[15]
+tab[16]
+tab[17]
+tab[18]
+tab[19]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 908 |NextHop - 48
+
+tab[20]
+tab[21]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 910 |NextHop - 89
+
+tab[22]
+tab[23]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 785 |NextHop - 32
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 277 |NextHop - 98
+
+tab[24]
+tab[25]
+tab[26]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 534 |NextHop - 46
+
+tab[27]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 154 |NextHop - 40
+
+tab[28]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 282 |NextHop - 39
+
+tab[29]
+tab[30]
+tab[31]
+tab[32]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 921 |NextHop - 5
+
+tab[33]
+tab[34]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 34 |NextHop - 98
+
+tab[35]
+tab[36]
+tab[37]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 164 |NextHop - 67
+
+tab[38]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 546 |NextHop - 48
+
+tab[39]
+tab[40]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 929 |NextHop - 32
+
+tab[41]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 803 |NextHop - 98
+
+tab[42]
+tab[43]
+tab[44]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 679 |NextHop - 28
+
+tab[45]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 45 |NextHop - 3
+
+tab[46]
+tab[47]
+tab[48]
+tab[49]
+tab[50]
+tab[51]
+tab[52]
+tab[53]
+tab[54]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 308 |NextHop - 71
+
+tab[55]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 563 |NextHop - 56
+
+tab[56]
+tab[57]
+tab[58]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 947 |NextHop - 38
+
+tab[59]
+tab[60]
+tab[61]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 823 |NextHop - 25
+
+tab[62]
+tab[63]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 190 |NextHop - 34
+
+tab[64]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 191 |NextHop - 25
+
+tab[65]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 954 |NextHop - 57
+
+tab[66]
+tab[67]
+tab[68]
+tab[69]
+tab[70]
+tab[71]
+tab[72]
+tab[73]
+tab[74]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 455 |NextHop - 63
+
+tab[75]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 75 |NextHop - 84
+
+tab[76]
+tab[77]
+tab[78]
+tab[79]
+tab[80]
+tab[81]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 716 |NextHop - 32
+
+tab[82]
+tab[83]
+tab[84]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 846 |NextHop - 11
+
+tab[85]
+tab[86]
+tab[87]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 214 |NextHop - 72
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 722 |NextHop - 21
+
+tab[88]
+tab[89]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 851 |NextHop - 36
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 978 |NextHop - 78
+
+tab[90]
+tab[91]
+tab[92]
+tab[93]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 855 |NextHop - 56
+
+tab[94]
+tab[95]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 730 |NextHop - 42
+
+tab[96]
+tab[97]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 986 |NextHop - 12
+
+tab[98]
+tab[99]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 99 |NextHop - 17
+
+tab[100]
+tab[101]
+tab[102]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 229 |NextHop - 77
+
+tab[103]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 865 |NextHop - 85
+
+tab[104]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 104 |NextHop - 12
+
+tab[105]
+tab[106]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 487 |NextHop - 75
+
+tab[107]
+tab[108]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 616 |NextHop - 33
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 108 |NextHop - 52
+
+tab[109]
+tab[110]
+tab[111]
+tab[112]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 747 |NextHop - 54
+
+tab[113]
+tab[114]
+tab[115]
+tab[116]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 878 |NextHop - 34
+
+PROXIMO:
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 878 |NextHop - 49
+
+tab[117]
+tab[118]
+tab[119]
+tab[120]
+tab[121]
+tab[122]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 757 |NextHop - 92
+
+tab[123]
+tab[124]
+tab[125]
+tab[126]
+
+### IMPRESSAO DE ENDERECO ###
+Destination - 507 |NextHop - 33
+
