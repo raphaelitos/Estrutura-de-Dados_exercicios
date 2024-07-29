@@ -1,0 +1,64 @@
+tabela[0]
+Palavra: How, Ocorrencias: 2
+tabela[1]
+Palavra: much, Ocorrencias: 1
+tabela[2]
+Palavra: wood, Ocorrencias: 2
+tabela[3]
+Palavra: would, Ocorrencias: 1
+tabela[4]
+Palavra: woodchuck, Ocorrencias: 2
+tabela[5]
+Palavra: chuck, Ocorrencias: 2
+tabela[6]
+Palavra: if, Ocorrencias: 1
+tabela[7]
+Palavra: could, Ocorrencias: 1
+tabela[8]
+Palavra: Peter, Ocorrencias: 2
+tabela[9]
+Palavra: Piper, Ocorrencias: 2
+tabela[10]
+Palavra: picked, Ocorrencias: 1
+tabela[11]
+Palavra: peck, Ocorrencias: 1
+tabela[12]
+Palavra: of, Ocorrencias: 1
+tabela[13]
+Palavra: pickled, Ocorrencias: 2
+tabela[14]
+Palavra: peppers, Ocorrencias: 2
+tabela[15]
+Palavra: many, Ocorrencias: 1
+tabela[16]
+Palavra: did, Ocorrencias: 1
+tabela[17]
+Palavra: pick, Ocorrencias: 1
+tabela[18]
+Palavra: To, Ocorrencias: 1
+tabela[19]
+Palavra: begin, Ocorrencias: 2
+tabela[20]
+Palavra: to, Ocorrencias: 4
+tabela[21]
+Palavra: toboggan, Ocorrencias: 6
+tabela[22]
+Palavra: first, Ocorrencias: 1
+tabela[23]
+Palavra: buy, Ocorrencias: 3
+tabela[24]
+Palavra: but, Ocorrencias: 1
+tabela[25]
+Palavra: don, Ocorrencias: 1
+tabela[26]
+Palavra: too, Ocorrencias: 2
+tabela[27]
+Palavra: big, Ocorrencias: 3
+tabela[28]
+Palavra: Too, Ocorrencias: 1
+tabela[29]
+Palavra: is, Ocorrencias: 1
+tabela[97]
+Palavra: a, Ocorrencias: 7
+tabela[116]
+Palavra: t, Ocorrencias: 1
