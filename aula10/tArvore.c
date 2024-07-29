@@ -86,3 +86,52 @@ void imprimeArvore(tArvore *a){
     imprimeArvore(a->sad);
     printf(">");
 }
+
+tArvore* retiraAlunoArvore(tArvore *a, char *nome) {
+    if (estaVaziaArvore(a)) return a;
+
+    if (strcmp(getNomeAluno(a->aluno), nome) == 0) { // Encontrou o nó a ser removido
+        if (ehFolha(a)) {
+            desalocaAluno(a->aluno);
+            free(a);
+            return NULL;
+        } else if (a->sae == NULL) {
+            tArvore *temp = a->sad;
+            desalocaAluno(a->aluno);
+            free(a);
+            return temp;
+        } else if (a->sad == NULL) {
+            tArvore *temp = a->sae;
+            desalocaAluno(a->aluno);
+            free(a);
+            return temp;
+        } else { // Nó com dois filhos
+            tArvore *temp = a->sad;
+            tArvore *parent = NULL;
+
+            // Encontrar o menor nó na subárvore direita
+            while (temp->sae != NULL) {
+                parent = temp;
+                temp = temp->sae;
+            }
+
+            // Substituir o conteúdo do nó a ser removido pelo conteúdo do menor nó encontrado
+            a->aluno = temp->aluno;
+
+            // Remover o menor nó encontrado
+            if (parent != NULL) {
+                parent->sae = retiraAlunoArvore(parent->sae, getNomeAluno(temp->aluno));
+            } else {
+                a->sad = retiraAlunoArvore(a->sad, getNomeAluno(temp->aluno));
+            }
+
+            return a;
+        }
+    } 
+    else {
+        a->sae = retiraAlunoArvore(a->sae, nome);
+        a->sad = retiraAlunoArvore(a->sad, nome);
+    }
+
+    return a;
+}
