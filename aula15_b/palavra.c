@@ -89,6 +89,7 @@ tPalavra* inserePalavraLista(tPalavra *lista, tPalavra *p){
 }
 
 int compPalavra(void *dado, void *key){
+    assert(!key, "chave nula em compPalavra");
     if(!dado) return 0;
     tPalavra *p = (tPalavra*)dado;
     return !strcmp(p->string, key);

@@ -39,12 +39,15 @@ void* busca (tHash* hash, void* key, int (*fhash)(void*), int (*comp)(void*,void
 
     int id = fhash(key) % hash->tam;
     
+    if(!hash->vet[id]) return NULL;
     if(comp(hash->vet[id], key)) return hash->vet[id];
 
     for(int i = id; i < hash->tam; i++){
+        if(!hash->vet[i]) return NULL;
         if(comp(hash->vet[i], key)) return hash->vet[i];
     }
     for(int i = 0; i < id; i++){
+        if(!hash->vet[i]) return NULL;
         if(comp(hash->vet[i], key)) return hash->vet[i];
     }
 
@@ -54,7 +57,7 @@ void* busca (tHash* hash, void* key, int (*fhash)(void*), int (*comp)(void*,void
 void* hash_insere (tHash* hash, void* key, void* objeto, int (*fhash)(void*), int(*comp)(void*,void*)){
     asserto(!hash, "hash nula em insere");
 
-    int id = fhash(key);
+    int id = fhash(key) % hash->tam;
 
     if(comp(hash->vet[id], key)) return objeto;
 

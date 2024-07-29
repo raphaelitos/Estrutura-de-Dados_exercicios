@@ -1,64 +1,64 @@
-tabela[0]
-Palavra: How, Ocorrencias: 2
-tabela[1]
-Palavra: much, Ocorrencias: 1
-tabela[2]
-Palavra: wood, Ocorrencias: 2
-tabela[3]
-Palavra: would, Ocorrencias: 1
 tabela[4]
-Palavra: woodchuck, Ocorrencias: 2
-tabela[5]
-Palavra: chuck, Ocorrencias: 2
-tabela[6]
-Palavra: if, Ocorrencias: 1
-tabela[7]
-Palavra: could, Ocorrencias: 1
-tabela[8]
 Palavra: Peter, Ocorrencias: 2
-tabela[9]
+tabela[5]
 Palavra: Piper, Ocorrencias: 2
-tabela[10]
-Palavra: picked, Ocorrencias: 1
-tabela[11]
-Palavra: peck, Ocorrencias: 1
-tabela[12]
-Palavra: of, Ocorrencias: 1
-tabela[13]
-Palavra: pickled, Ocorrencias: 2
-tabela[14]
+tabela[6]
 Palavra: peppers, Ocorrencias: 2
-tabela[15]
-Palavra: many, Ocorrencias: 1
-tabela[16]
-Palavra: did, Ocorrencias: 1
-tabela[17]
-Palavra: pick, Ocorrencias: 1
-tabela[18]
-Palavra: To, Ocorrencias: 1
-tabela[19]
+tabela[9]
 Palavra: begin, Ocorrencias: 2
-tabela[20]
-Palavra: to, Ocorrencias: 4
-tabela[21]
-Palavra: toboggan, Ocorrencias: 6
-tabela[22]
-Palavra: first, Ocorrencias: 1
-tabela[23]
-Palavra: buy, Ocorrencias: 3
-tabela[24]
-Palavra: but, Ocorrencias: 1
-tabela[25]
-Palavra: don, Ocorrencias: 1
-tabela[26]
-Palavra: too, Ocorrencias: 2
+tabela[18]
+Palavra: chuck, Ocorrencias: 2
 tabela[27]
+Palavra: could, Ocorrencias: 1
+tabela[38]
+Palavra: peck, Ocorrencias: 1
+tabela[42]
+Palavra: pick, Ocorrencias: 1
+tabela[44]
+Palavra: first, Ocorrencias: 1
+tabela[47]
+Palavra: would, Ocorrencias: 1
+tabela[48]
+Palavra: How, Ocorrencias: 2
+tabela[49]
+Palavra: much, Ocorrencias: 1
+tabela[51]
+Palavra: did, Ocorrencias: 1
+tabela[52]
 Palavra: big, Ocorrencias: 3
-tabela[28]
+tabela[53]
 Palavra: Too, Ocorrencias: 1
-tabela[29]
+tabela[56]
+Palavra: many, Ocorrencias: 1
+tabela[60]
+Palavra: wood, Ocorrencias: 2
+tabela[67]
+Palavra: don, Ocorrencias: 1
+tabela[68]
+Palavra: To, Ocorrencias: 1
+tabela[77]
+Palavra: but, Ocorrencias: 1
+tabela[78]
+Palavra: woodchuck, Ocorrencias: 2
+tabela[80]
+Palavra: if, Ocorrencias: 1
+tabela[82]
+Palavra: buy, Ocorrencias: 3
+tabela[84]
+Palavra: too, Ocorrencias: 2
+tabela[86]
+Palavra: of, Ocorrencias: 1
+tabela[87]
+Palavra: toboggan, Ocorrencias: 6
+tabela[93]
 Palavra: is, Ocorrencias: 1
 tabela[97]
 Palavra: a, Ocorrencias: 7
+tabela[98]
+Palavra: pickled, Ocorrencias: 2
+tabela[100]
+Palavra: to, Ocorrencias: 4
 tabela[116]
+Palavra: picked, Ocorrencias: 1
+tabela[117]
 Palavra: t, Ocorrencias: 1

@@ -52,15 +52,15 @@ int main(int argc, char *argv[]){
     char str[MAX_TAM_STRING];
 
     while(lePalavra(arq, str)){
-        tPalavra *p;
-        if(!(p = (tPalavra*)busca(tab, (void*)str, fHash, compPalavra))){
+        tPalavra *p = (tPalavra*)busca(tab, (void*)str, fHash, compPalavra);
+        if(!p){
             p = criaPalavra(str);
-            hash_insere(tab, (void*)str, (void*)p, fHash, compPalavra);
+            p = (tPalavra *)hash_insere(tab, (void*)str, (void*)p, fHash, compPalavra);
         }
-        incOcorrenciasPalavra(p);
+        if(p) incOcorrenciasPalavra(p);
     }
 
-    imprimeHashGen(tab, imprimePalavra  );
+    imprimeHashGen(tab, imprimePalavra);
     
     void **vet = getVetHash(tab);
 
