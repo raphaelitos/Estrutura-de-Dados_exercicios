@@ -4,20 +4,28 @@
 #include "listaGen.h"
 
 struct listagen{
-    void *dado;
+    void *info;
     tListaGen *prox;
 };
 
 tListaGen *criaListaGen(){
-    tListaGen *g = NULL;
+    /*tListaGen *g = NULL;
+    return g;*/
+    tListaGen *g = (tListaGen *)calloc(1, sizeof(tListaGen));
+    if(!g)exit(EXIT_FAILURE);
+    
+    g->info = NULL;
+    g->prox = NULL;
+
     return g;
 }
 
-void liberaListaGen(tListaGen *l){
+void liberaListaGen(tListaGen *l, void(*liberaCelula)(void *dado)){
     tListaGen *aux = l, *pop;
     while(aux){
         pop = aux;
         aux = aux->prox;
+        liberaCelula(aux->info);
         free(pop);
     }
 }
@@ -25,7 +33,7 @@ void liberaListaGen(tListaGen *l){
 tListaGen *insereListaGen(tListaGen *l, void *dado){
     tListaGen *nova = (tListaGen*)calloc(1, sizeof(tListaGen));
     if(!nova) exit(EXIT_FAILURE);
-    nova->dado = dado;
+    nova->info = dado;
     nova->prox = l;
 
     return nova;
@@ -34,7 +42,7 @@ tListaGen *insereListaGen(tListaGen *l, void *dado){
 tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
     tListaGen *aux = l, *pre = NULL;
 
-    while(aux && cb(aux->dado, dado)){
+    while(aux && cb(aux->info, dado)){
         pre = aux;
         aux = aux->prox;
     }
@@ -45,4 +53,18 @@ tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
     pre->prox = aux->prox;
 }
 
-int percorreListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado);
+int percorreListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
+    tListaGen *aux;
+    for(aux = l; aux != NULL; aux = aux->prox){
+        if(!(cb(aux->info, dado))) return 0;
+    }
+    return 1;
+}
+
+void *buscaListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
+    tListaGen *aux;
+    for(aux = l; aux != NULL; aux = aux->prox){
+        if(!(cb(aux->info, dado))) return aux;
+    }
+    return NULL;
+}
