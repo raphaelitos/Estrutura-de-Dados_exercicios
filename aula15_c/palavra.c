@@ -3,8 +3,6 @@
 #include <string.h>
 #include "palavra.h"
 
-//typedef tPalavra tListaGen;
-
 typedef struct cel{
     char *str;
     int ocorrencias;
@@ -17,7 +15,7 @@ static pCelula *criapCel(char *str){
     return nova;
 }
 
-static void liberapCel(void *dado){
+void liberapCel(void *dado){
     if(!dado)return;
     pCelula *cel = (pCelula*)dado;
     free(cel->str);
@@ -26,7 +24,7 @@ static void liberapCel(void *dado){
 
 /// @brief lista sem sentinela de palavras
 struct palavra{
-    pCelula *info;
+    void *info;
     tPalavra *prox;
 };
 
@@ -37,95 +35,76 @@ void assert(int exp, char *msg){
     }
 }
 
-tPalavra* criaPalavra(){
-    /*tPalavra *nova = NULL;    
-    return nova;*/
-    return (tPalavra*)criaListaGen();
+tPalavra* criaPalavra(char *str){
+    pCelula *c = criapCel(str);
+    return (tPalavra*)criaListaGen((void*)c);
 }
 
 void liberaPalavra(tPalavra *p){
-    /*if(!p) return;
-
-    tPalavra *pop, *aux = p;
-
-    while(aux){
-        pop = aux;
-        aux = aux->prox;
-        free(pop->info);
-        free(pop);
-    }*/
    liberaListaGen((tListaGen*)p, liberapCel);
 }
 
 int imprime(void *palavra, void *dado){
     assert(!palavra, "palavra nula em imprime");
+    
     tPalavra *p = (tPalavra*)palavra;
-    printf("Palavra: %s, Ocorrencias: %d\n", p->info->str, p->info->ocorrencias);
-    return 1;
+    pCelula *c = (pCelula*)p->info;
+    
+    assert(!c, "info nula em palavra enviada para imprime");
+
+    printf("Palavra: %s, Ocorrencias: %d\n", c->str, c->ocorrencias);
+    
+    return 1; //pra continuar no loop
 }
 
 void imprimePalavra(void *dado){
     assert(!dado, "palavra nula na impressao\n");
-    /*tPalavra *p = (tPalavra*) dado;
-    while(p){
-        printf("Palavra: %s, Ocorrencias: %d\n", p->string, p->ocorrencias);
-        p = p->prox;
-    }*/
+  
    percorreListaGen((tListaGen*)dado, imprime, NULL);
 }
 
 void incOcorrenciasPalavra(tPalavra *p){
     assert(!p, "palavra invalida para incremento\n");
-    (p->info->ocorrencias)++;
+    printf("incrementando\n");
+    pCelula *c = (pCelula*)p->info;
+    (c->ocorrencias)++;
 }
 
 int getOcorrenciasPalavra(tPalavra *p){
     assert(!p, "palavra invalida para ocorrencias\n");
-    return p->info->ocorrencias;
+    pCelula *c = (pCelula*)p->info;
+    return c->ocorrencias;
 }
 
 char* getStrPalavra(tPalavra *p){
     assert(!p, "palavra invalida para getStr\n");
-    return p->info->str;
+    pCelula *c = (pCelula*)p->info;
+    return c->str;
 }
 
 int getTamListaPalavras(tPalavra *p){
     assert(!p, "palavra invalida para getTam\n");
     int tam = 0;
-    for(tPalavra *aux = p; aux; aux = aux->prox){
+    for(tPalavra *aux = p; aux != NULL; aux = aux->prox){
         tam++;
     }
     return tam;
 }
 
-int pBusca(void *palavra, void *dado){
-    tPalavra *p = (tPalavra*)palavra;
-    char *str = (char*)dado;
-    
-    if(!strcmp(p->info->str, str)) return 1;
-    return 0;
-}
-
 tPalavra* buscaPalavra(tPalavra *p, char *str){
-    /*for(tPalavra *aux = p; aux != NULL; aux = aux->prox){
-        if(!strcmp(aux->info->str, str)) return aux;
-    }
-    return NULL;*/
-    return (tPalavra*)buscaListaGen((tListaGen*)p, pBusca ,(void*) str);
+    return (tPalavra*)buscaListaGen((tListaGen*)p, compPalavra ,(void*) str);
 }
 
-tPalavra* inserePalavraLista(tPalavra *lista, char *str){
-    /*assert((!p), "palavra invalida em insere");
-    p->prox = lista;
-    return p;*/
-    tPalavra *p = criaPalavra();
-    p->info = criapCel(str);
-    return (tPalavra*)insereListaGen((tListaGen*)lista, (void*)p);
+tPalavra* inserePalavraLista(tPalavra *lista, tPalavra *p){
+    return (tPalavra*)insereListaGen((tListaGen*)lista, (tListaGen*)p);
 }
 
 int compPalavra(void *dado, void *key){
     assert(!key, "chave nula em compPalavra");
-    if(!dado) return 0;
+    if(!dado) return 1;
+    
     tPalavra *p = (tPalavra*)dado;
-    return !strcmp(p->info->str, key);
+    pCelula *c = (pCelula*)p->info;
+    
+    return strcmp(c->str, (char*)key);
 }

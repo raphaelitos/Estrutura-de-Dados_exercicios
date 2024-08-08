@@ -6,7 +6,7 @@ typedef struct listagen tListaGen;
 /// @brief inicializa uma lista generica
 /// @return uma variavel do tipo tListaGen
 /// devidamente alocada
-tListaGen *criaListaGen();
+tListaGen *criaListaGen(void *info);
 
 /// @brief libera a memoria utilizada por l
 /// @param l uma lista generica valida
@@ -19,7 +19,7 @@ void liberaListaGen(tListaGen *l, void(*liberaCelula)(void *dado));
 /// @param dado um dado valido
 /// @return a nova lista generica, com dado 
 /// na primeira celula
-tListaGen *insereListaGen(tListaGen *l, void *dado);
+tListaGen *insereListaGen(tListaGen *l, tListaGen *dado);
 
 /// @brief retira uma celula de l com base
 /// na comparacao feita por cb
@@ -27,7 +27,7 @@ tListaGen *insereListaGen(tListaGen *l, void *dado);
 /// @param cb uma funcao de comparacao
 /// @param dado um dado valido
 /// @return a lista sem o elemento procurado
-tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado);
+tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado, void(*liberaCelula)(void *dado));
 
 /// @brief busca uma celula de l com base
 /// na comparacao feita por cb
@@ -36,7 +36,7 @@ tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado);
 /// @param dado um dado valido
 /// @return o dado procurado (ou null caso
 /// ele nao exista)
-void *buscaListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado);
+tListaGen *buscaListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado);
 
 /// @brief percorre l executando cb
 /// @param l uma lista generica valida

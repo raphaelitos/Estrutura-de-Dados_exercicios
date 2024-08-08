@@ -8,13 +8,11 @@ struct listagen{
     tListaGen *prox;
 };
 
-tListaGen *criaListaGen(){
-    /*tListaGen *g = NULL;
-    return g;*/
+tListaGen *criaListaGen(void *info){
     tListaGen *g = (tListaGen *)calloc(1, sizeof(tListaGen));
     if(!g)exit(EXIT_FAILURE);
     
-    g->info = NULL;
+    g->info = info;
     g->prox = NULL;
 
     return g;
@@ -30,16 +28,16 @@ void liberaListaGen(tListaGen *l, void(*liberaCelula)(void *dado)){
     }
 }
 
-tListaGen *insereListaGen(tListaGen *l, void *dado){
-    tListaGen *nova = (tListaGen*)calloc(1, sizeof(tListaGen));
-    if(!nova) exit(EXIT_FAILURE);
-    nova->info = dado;
-    nova->prox = l;
-
-    return nova;
+tListaGen *insereListaGen(tListaGen *l, tListaGen *dado){
+    if(!dado){
+        printf("dado invalido em insereListaGen");
+        exit(EXIT_FAILURE);
+    }
+    dado->prox = l;
+    return dado;
 }
 
-tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
+tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado, void(*liberaCelula)(void *dado)){
     tListaGen *aux = l, *pre = NULL;
 
     while(aux && cb(aux->info, dado)){
@@ -50,7 +48,13 @@ tListaGen *retiraListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
     if(!pre){
         l = aux->prox;
     }
-    pre->prox = aux->prox;
+    else{
+        pre->prox = aux->prox;
+    }
+    liberaCelula(aux->info);
+    free(aux);
+
+    return l;
 }
 
 int percorreListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
@@ -61,10 +65,13 @@ int percorreListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
     return 1;
 }
 
-void *buscaListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
+tListaGen *buscaListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
     tListaGen *aux;
     for(aux = l; aux != NULL; aux = aux->prox){
-        if(!(cb(aux->info, dado))) return aux;
+        if(!(cb(aux->info, dado))){
+            printf("achou\n");
+            return aux;
+        }
     }
     return NULL;
 }

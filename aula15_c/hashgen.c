@@ -4,7 +4,7 @@
 #include "hashgen.h"
 
 struct hash{
-    void **vet;
+    tListaGen **vet;
     int tam;
 };
 
@@ -19,7 +19,7 @@ tHash* cria (int tam, size_t tam_item){
     tHash *t = (tHash *)calloc(1, sizeof(tHash));
     asserto(!t, "falha na alocacao de hash");
 
-    t->vet = (void**)calloc(tam, tam_item);
+    t->vet = (tListaGen**)calloc(tam, tam_item);
     for(int i = 0; i < tam; i++){
         t->vet[i] = NULL;
     }
@@ -34,48 +34,24 @@ void libera(tHash* table){
     free(table);
 }
 
-void* busca (tHash* hash, void* key, int (*fhash)(void*), int (*comp)(void*,void*)){
+tListaGen* busca (tHash* hash, void* key, int (*fhash)(void*), int (*comp)(void*,void*)){
     asserto(!hash, "hash nula em busca");
 
     int id = fhash(key) % hash->tam;
-    
-    if(!hash->vet[id]) return NULL;
-    if(comp(hash->vet[id], key)) return hash->vet[id];
 
-    for(int i = id; i < hash->tam; i++){
-        if(!hash->vet[i]) return NULL;
-        if(comp(hash->vet[i], key)) return hash->vet[i];
-    }
-    for(int i = 0; i < id; i++){
-        if(!hash->vet[i]) return NULL;
-        if(comp(hash->vet[i], key)) return hash->vet[i];
-    }
-
-    return NULL;
+    return buscaListaGen(hash->vet[id], comp, key);
 }
 
-void* hash_insere (tHash* hash, void* key, void* objeto, int (*fhash)(void*), int(*comp)(void*,void*)){
+tListaGen* hash_insere (tHash* hash, void* key, tListaGen* objeto, int (*fhash)(void*), int(*comp)(void*,void*)){
     asserto(!hash, "hash nula em insere");
 
     int id = fhash(key) % hash->tam;
 
-    if(comp(hash->vet[id], key)) return objeto;
+    if(buscaListaGen(hash->vet[id], comp, key)) return objeto;
 
-    for(int i = id; i < hash->tam; i++){
-        if(!hash->vet[i]){
-            hash->vet[i] = objeto;
-            return objeto;
-        }
-    }
-    
-    for(int i = 0; i < id; i++){
-        if(!hash->vet[i]){
-            hash->vet[i] = objeto;
-            return objeto;
-        }
-    }
-    
-    printf("nao foi possivel inserir o elemento na tabela\n");
+    hash->vet[id] = insereListaGen(hash->vet[id], objeto);
+
+    if(hash->vet[id]) return objeto;
     return NULL;
 }
 
@@ -84,7 +60,7 @@ int getTamHash(tHash *table){
     return table->tam;
 }
 
-void** getVetHash(tHash *table){
+tListaGen** getVetHash(tHash *table){
     asserto(!table, "hash nula em getTam");
     return table->vet;
 }

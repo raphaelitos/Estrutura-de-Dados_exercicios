@@ -7,7 +7,7 @@ typedef struct palavra tPalavra;
 
 void assert(int exp, char *msg);
 
-tPalavra* criaPalavra();
+tPalavra* criaPalavra(char *str);
 
 void liberaPalavra(tPalavra *p);
 
@@ -23,7 +23,7 @@ int getTamListaPalavras(tPalavra *p);
 
 tPalavra* buscaPalavra(tPalavra *p, char *str);
 
-tPalavra* inserePalavraLista(tPalavra *lista, char *str);
+tPalavra* inserePalavraLista(tPalavra *lista, tPalavra *p);
 
 int compPalavra(void *dado, void *key);
 
