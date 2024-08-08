@@ -60,12 +60,7 @@ int main(int argc, char *argv[]){
             p = (tPalavra *)hash_insere(tab, (void*)str, (tListaGen*)p, fHash, compPalavra);
         }
         imprimePalavra((void*)p);
-        if(p) {
-            /*imprimePalavra((void*)p);
-            incOcorrenciasPalavra(p);
-            imprimePalavra((void*)p);
-            printf("incrementou\n");*/
-        }
+        //incOcorrenciasPalavra(p);
     }
 
     imprimeHashGen(tab, imprimePalavra);

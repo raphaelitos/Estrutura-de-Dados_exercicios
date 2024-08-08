@@ -23,7 +23,7 @@ void liberaListaGen(tListaGen *l, void(*liberaCelula)(void *dado)){
     while(aux){
         pop = aux;
         aux = aux->prox;
-        liberaCelula(aux->info);
+        liberaCelula(pop->info);
         free(pop);
     }
 }
@@ -31,6 +31,10 @@ void liberaListaGen(tListaGen *l, void(*liberaCelula)(void *dado)){
 tListaGen *insereListaGen(tListaGen *l, tListaGen *dado){
     if(!dado){
         printf("dado invalido em insereListaGen");
+        exit(EXIT_FAILURE);
+    }
+    if(dado->prox){
+        printf("dado pra insercao ja e' uma lista\n");
         exit(EXIT_FAILURE);
     }
     dado->prox = l;

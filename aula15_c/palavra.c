@@ -58,13 +58,14 @@ int imprime(void *palavra, void *dado){
 }
 
 void imprimePalavra(void *dado){
-    assert(!dado, "palavra nula na impressao\n");
-  
-   percorreListaGen((tListaGen*)dado, imprime, NULL);
+    //assert(!dado, "palavra nula na impressao\n");
+    if(!dado) return;
+    percorreListaGen((tListaGen*)dado, imprime, NULL);
 }
 
 void incOcorrenciasPalavra(tPalavra *p){
-    assert(!p, "palavra invalida para incremento\n");
+    //assert(!p, "palavra invalida para incremento\n");
+    if(!p) return;
     printf("incrementando\n");
     pCelula *c = (pCelula*)p->info;
     (c->ocorrencias)++;
