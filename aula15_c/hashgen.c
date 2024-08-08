@@ -15,11 +15,11 @@ static void asserto(int exp, char *msg){
     }
 }
 
-tHash* cria (int tam, size_t tam_item){
+tHash* cria (int tam){
     tHash *t = (tHash *)calloc(1, sizeof(tHash));
     asserto(!t, "falha na alocacao de hash");
 
-    t->vet = (tListaGen**)calloc(tam, tam_item);
+    t->vet = (tListaGen**)calloc(tam, sizeof(tlistaGen*));
     for(int i = 0; i < tam; i++){
         t->vet[i] = NULL;
     }

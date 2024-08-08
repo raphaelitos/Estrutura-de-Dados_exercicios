@@ -46,21 +46,23 @@ int main(int argc, char *argv[]){
     FILE *arq = fopen(argv[1], "r");
     assert(!arq, "falha na abertura de arquivo");
 
-
-    tHash *tab = cria(TAMANHO, sizeof(tListaGen*));
+    tHash *tab = cria(TAMANHO);
 
     char str[MAX_TAM_STRING];
     tPalavra *p = NULL;
 
     while(lePalavra(arq, str)){
+        printf("palavra lida: %s\n", str);
         p = (tPalavra*)busca(tab, (void*)str, fHash, compPalavra);
         if(!p){
-            printf("não achou\nPalavra: %s\n", str);
+            printf("não achou\n");
             p = criaPalavra(str);
             p = (tPalavra *)hash_insere(tab, (void*)str, (tListaGen*)p, fHash, compPalavra);
         }
-        imprimePalavra((void*)p);
-        //incOcorrenciasPalavra(p);
+        if(p){
+            imprimePalavra((void*)p);
+            //incOcorrenciasPalavra(p);
+        }
     }
 
     imprimeHashGen(tab, imprimePalavra);

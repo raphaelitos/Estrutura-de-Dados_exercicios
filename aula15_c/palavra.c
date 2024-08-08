@@ -10,6 +10,7 @@ typedef struct cel{
 
 static pCelula *criapCel(char *str){
     pCelula *nova = (pCelula*)calloc(1, sizeof(pCelula));
+    
     nova->str = strdup(str);
 
     return nova;
@@ -60,7 +61,9 @@ int imprime(void *palavra, void *dado){
 void imprimePalavra(void *dado){
     //assert(!dado, "palavra nula na impressao\n");
     if(!dado) return;
-    percorreListaGen((tListaGen*)dado, imprime, NULL);
+    //tPalavra *p = (tPalavra*)dado;
+    imprime(dado, NULL);
+    //percorreListaGen((tListaGen*)p, imprime, NULL);
 }
 
 void incOcorrenciasPalavra(tPalavra *p){
@@ -107,5 +110,10 @@ int compPalavra(void *dado, void *key){
     tPalavra *p = (tPalavra*)dado;
     pCelula *c = (pCelula*)p->info;
     
+    assert(c == NULL, "info nula em CompPalavra");
+    assert((c->str) == NULL, "string nula em CompPalavra");
+
+    printf("Comparando: c->str = %p, key = %p\n", (void*)c->str, (void*)key);
+
     return strcmp(c->str, (char*)key);
 }

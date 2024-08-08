@@ -6,7 +6,7 @@
 
 typedef struct hash tHash;
 
-tHash* cria (int tam, size_t tam_item);
+tHash* cria (int tam);
 
 void libera(tHash* table);
 
