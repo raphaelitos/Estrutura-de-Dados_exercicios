@@ -10,18 +10,17 @@ int main()
 {
  
     // criando a arvore vazia
-    Arv* arv = CriaVazia();
+    tArv* arv = CriaVazia();
 
     //Imprime a arvore (neste momento ainda vazia)
     Imprime(arv);
 
-     arv = CriaOperador('+',
-               CriaOperador('*',
- 		   CriaOperador ('-', 
-                       CriaOperando (6), CriaOperando (3)),
-                   CriaOperador ('+', 
-                       CriaOperando (4), CriaOperando (1))),
-               CriaOperando (5));
+    arv = CriaOperador('+', CriaOperador('*', 
+                        CriaOperador ('-', 
+                        CriaOperando (6), CriaOperando (3)),
+                        CriaOperador ('+', 
+                        CriaOperando (4), CriaOperando (1))), 
+                        CriaOperando (5));
     
     printf ("\nA arvore eh: ");  
     //Imprime a arvore de expressoes
@@ -41,17 +40,16 @@ int main()
     
   //segunda arvore
 
-  Arv* arv2= CriaOperador('+',
-               CriaOperador('+',
- 		   CriaOperador ('*', 
-                       CriaOperando (6), CriaOperando (5)),
-                   CriaOperando(22)), 
-                   CriaOperador ('+', 
-                       CriaOperador('-',
-                             CriaOperador ('*', 
-                                 CriaOperando (5), CriaOperando (10)), 
-                             CriaOperando (20)),
-                       CriaOperando (30)));
+  tArv* arv2 = CriaOperador('+',
+                CriaOperador('+',
+                CriaOperador ('*', 
+                CriaOperando (6), CriaOperando (5)),
+                CriaOperando(22)), 
+                CriaOperador ('+', 
+                CriaOperador('-',
+                CriaOperador ('*', 
+                CriaOperando (5), CriaOperando (10)), 
+                CriaOperando (20)), CriaOperando (30)));
 
 
      printf ("\nA arvore2 eh: ");  

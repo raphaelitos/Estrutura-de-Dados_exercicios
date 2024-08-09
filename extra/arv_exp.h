@@ -2,59 +2,59 @@
 #define ARV_H_
 
 /*Tipo que define a arvore(tipo opaco)
-  Estrutura interna do tipo deve ser definida na implementação do TAD. */
-typedef struct arv Arv;
+  Estrutura interna do tipo deve ser definida na implementaï¿½ï¿½o do TAD. */
+typedef struct arv tArv;
 
 /*Cria uma arvore vazia, ou seja, retorna NULL
 * inputs: nenhum
 * output: NULL
 */
-Arv* CriaVazia(void);
+tArv* CriaVazia(void);
 
-/*cria um nó raiz de operador dados o operador e as duas sub-árvores, a da esquerda e a da direita
+/*cria um nï¿½ raiz de operador dados o operador e as duas sub-ï¿½rvores, a da esquerda e a da direita
 * inputs: o operador, as sub-arvores da esquerda e da direita
-* output: o endereço do nó raiz criado
+* output: o endereï¿½o do nï¿½ raiz criado
 */
-Arv* CriaOperador(char c, Arv* esq, Arv* dir);
+tArv* CriaOperador(char c, tArv* esq, tArv* dir);
 
-/*cria um nó operando dado o valor do no (como o operando é um nó folha, as sub-arvores da esquerda e da direita são nulas
+/*cria um nï¿½ operando dado o valor do no (como o operando ï¿½ um nï¿½ folha, as sub-arvores da esquerda e da direita sï¿½o nulas
 * inputs: o operando
-* output: o endereço do nó raiz criado
+* output: o endereï¿½o do nï¿½ raiz criado
 */
-Arv* CriaOperando(int valor);
+tArv* CriaOperando(int valor);
 
-/*Imprime a árvore em notação InOrder (esq, raiz, direita)
-* inputs: o endereço da raiz da árvore
+/*Imprime a ï¿½rvore em notaï¿½ï¿½o InOrder (esq, raiz, direita)
+* inputs: o endereï¿½o da raiz da ï¿½rvore
 * output: nenhum
 */
-void Imprime(Arv* arv);
+void Imprime(tArv* arv);
 
-/* Libera memória alocada pela estrutura da árvore
-as sub-árvores devem ser liberadas antes de se liberar o nó raiz
-* inputs: o endereço da raiz da árvore
-* output: uma árvore vazia, representada por NULL
+/* Libera memï¿½ria alocada pela estrutura da ï¿½rvore
+as sub-ï¿½rvores devem ser liberadas antes de se liberar o nï¿½ raiz
+* inputs: o endereï¿½o da raiz da ï¿½rvore
+* output: uma ï¿½rvore vazia, representada por NULL
 */
-Arv* Libera (Arv* arv);
+tArv* Libera (tArv* arv);
 
 
-/* Retorna o valor correspondente à avaliação da expressão representada na árvore
-* inputs: o endereço da raiz da árvore
-* output: o valor da expressão
+/* Retorna o valor correspondente ï¿½ avaliaï¿½ï¿½o da expressï¿½o representada na ï¿½rvore
+* inputs: o endereï¿½o da raiz da ï¿½rvore
+* output: o valor da expressï¿½o
 */
-float Avalia(Arv* arv);
+float Avalia(tArv* arv);
 
 
-/* Retorna o número de folhas da árvore
-* inputs: o endereço da raiz da árvore
-* output: o número de folhas
+/* Retorna o nï¿½mero de folhas da ï¿½rvore
+* inputs: o endereï¿½o da raiz da ï¿½rvore
+* output: o nï¿½mero de folhas
 */
-int Folhas(Arv* arv);
+int Folhas(tArv* arv);
 
-/* Retorna a altura da árvore
-* inputs: o endereço da raiz da árvore
-* output: a altura da árvore
+/* Retorna a altura da ï¿½rvore
+* inputs: o endereï¿½o da raiz da ï¿½rvore
+* output: a altura da ï¿½rvore
 */
-int Altura(Arv* arv);
+int Altura(tArv* arv);
 
 
 #endif /* ARV_H_ */
