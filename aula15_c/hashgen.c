@@ -19,7 +19,7 @@ tHash* cria (int tam){
     tHash *t = (tHash *)calloc(1, sizeof(tHash));
     asserto(!t, "falha na alocacao de hash");
 
-    t->vet = (tListaGen**)calloc(tam, sizeof(tlistaGen*));
+    t->vet = (tListaGen**)calloc(tam, sizeof(tListaGen*));
     for(int i = 0; i < tam; i++){
         t->vet[i] = NULL;
     }
@@ -38,7 +38,6 @@ tListaGen* busca (tHash* hash, void* key, int (*fhash)(void*), int (*comp)(void*
     asserto(!hash, "hash nula em busca");
 
     int id = fhash(key) % hash->tam;
-
     return buscaListaGen(hash->vet[id], comp, key);
 }
 

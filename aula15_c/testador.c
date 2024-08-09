@@ -15,7 +15,6 @@ int fHash(void *dado){
     for(int i = 0; i < strlen(str); i++){
         soma += (int)str[i];
     }
-    //printf("%d\n", soma);
     return soma;
 }
 
@@ -52,16 +51,13 @@ int main(int argc, char *argv[]){
     tPalavra *p = NULL;
 
     while(lePalavra(arq, str)){
-        printf("palavra lida: %s\n", str);
         p = (tPalavra*)busca(tab, (void*)str, fHash, compPalavra);
         if(!p){
-            printf("não achou\n");
             p = criaPalavra(str);
             p = (tPalavra *)hash_insere(tab, (void*)str, (tListaGen*)p, fHash, compPalavra);
         }
         if(p){
-            imprimePalavra((void*)p);
-            //incOcorrenciasPalavra(p);
+            incOcorrenciasPalavra(p);
         }
     }
 

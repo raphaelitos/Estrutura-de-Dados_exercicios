@@ -10,9 +10,12 @@ typedef struct cel{
 
 static pCelula *criapCel(char *str){
     pCelula *nova = (pCelula*)calloc(1, sizeof(pCelula));
+    assert(!nova, "falha na alocacao de celula");
     
-    nova->str = strdup(str);
-
+    nova->str = (char*)calloc((strlen(str) + 1), sizeof(char));
+    assert(!(nova->str), "falha na alocacao de str em celula");
+    strcpy(nova->str, str);
+    
     return nova;
 }
 
@@ -45,11 +48,10 @@ void liberaPalavra(tPalavra *p){
    liberaListaGen((tListaGen*)p, liberapCel);
 }
 
-int imprime(void *palavra, void *dado){
-    assert(!palavra, "palavra nula em imprime");
+int imprime(void *info, void *dado){
+    assert(!info, "palavra nula em imprime");
     
-    tPalavra *p = (tPalavra*)palavra;
-    pCelula *c = (pCelula*)p->info;
+    pCelula *c = (pCelula*)info;
     
     assert(!c, "info nula em palavra enviada para imprime");
 
@@ -59,17 +61,18 @@ int imprime(void *palavra, void *dado){
 }
 
 void imprimePalavra(void *dado){
-    //assert(!dado, "palavra nula na impressao\n");
-    if(!dado) return;
-    //tPalavra *p = (tPalavra*)dado;
-    imprime(dado, NULL);
-    //percorreListaGen((tListaGen*)p, imprime, NULL);
+    if(!dado){
+        printf("dado nulo em imprime!\n");
+        return;
+    }
+    tPalavra *p = (tPalavra*)dado;
+
+    percorreListaGen((tListaGen*)p, imprime, NULL);
 }
 
 void incOcorrenciasPalavra(tPalavra *p){
     //assert(!p, "palavra invalida para incremento\n");
     if(!p) return;
-    printf("incrementando\n");
     pCelula *c = (pCelula*)p->info;
     (c->ocorrencias)++;
 }
@@ -107,13 +110,9 @@ int compPalavra(void *dado, void *key){
     assert(!key, "chave nula em compPalavra");
     if(!dado) return 1;
     
-    tPalavra *p = (tPalavra*)dado;
-    pCelula *c = (pCelula*)p->info;
+    pCelula *c = (pCelula*)dado;
     
     assert(c == NULL, "info nula em CompPalavra");
-    assert((c->str) == NULL, "string nula em CompPalavra");
-
-    printf("Comparando: c->str = %p, key = %p\n", (void*)c->str, (void*)key);
 
     return strcmp(c->str, (char*)key);
 }

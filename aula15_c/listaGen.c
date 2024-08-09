@@ -73,7 +73,6 @@ tListaGen *buscaListaGen(tListaGen *l, int(*cb)(void*, void*), void *dado){
     tListaGen *aux;
     for(aux = l; aux != NULL; aux = aux->prox){
         if(!(cb(aux->info, dado))){
-            printf("achou\n");
             return aux;
         }
     }
