@@ -1,0 +1,17 @@
+
+A arvore eh: (((6.00)-(3.00))*((4.00)+(1.00)))+(5.00)
+O valor da expressao da arvore1 eh: 20 
+
+O numero de folhas da arvore1 eh: 5 
+
+A altura da arvore1 eh: 2 
+
+A arvore eh: 
+A arvore2 eh: (((6.00)*(5.00))+(22.00))+((((5.00)*(10.00))-(20.00))+(30.00))
+O valor da expressao da arvore2 eh: 112 
+
+O numero de folhas da arvore2 eh: 7 
+
+A altura da arvore2 eh: 3 
+
+A arvore eh: 
