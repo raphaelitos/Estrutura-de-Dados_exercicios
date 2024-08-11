@@ -1,0 +1,73 @@
+arvore em ordem alfabetica:
+How 2
+Peter 2
+Piper 2
+To 1
+Too 1
+a 7
+begin 2
+big 3
+but 1
+buy 3
+chuck 2
+could 1
+did 1
+don 1
+first 1
+if 1
+is 1
+many 1
+much 1
+of 1
+peck 1
+peppers 2
+pick 1
+picked 1
+pickled 2
+t 1
+to 4
+toboggan 6
+too 2
+wood 2
+woodchuck 2
+would 1
+
+----------
+arvore ordenada por frequencia:
+Too 1
+To 1
+but 1
+don 1
+first 1
+did 1
+could 1
+is 1
+many 1
+if 1
+of 1
+pick 1
+peck 1
+t 1
+picked 1
+would 1
+much 1
+Piper 2
+Peter 2
+begin 2
+chuck 2
+peppers 2
+too 2
+pickled 2
+woodchuck 2
+wood 2
+How 2
+big 3
+buy 3
+to 4
+toboggan 6
+a 7
+
+----------
+32 palavras distintas encontradas
+60 palavras no total
+a é a palavra de maior frequência (7)
